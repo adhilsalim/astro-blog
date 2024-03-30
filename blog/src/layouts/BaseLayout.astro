@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,18 +11,12 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <Header />
-
-    <h1>Astro Blog</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
-    </ul>
+    <h1>{pageTitle}</h1>
+    <slot />
     <Footer />
     <script>
       import "../scripts/menu.js";
