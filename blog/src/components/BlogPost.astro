@@ -1,0 +1,9 @@
+---
+const { url, author, title } = Astro.props;
+---
+
+<li>
+  <a href={url} title={`written by ` + author}>
+    {title}
+  </a>
+</li>
